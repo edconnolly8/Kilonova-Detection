@@ -78,7 +78,7 @@ Update the file paths in Notebook 2 if your data lives elsewhere.
 
 - Observation epochs: t = 0, 1, 2, 3 days
 - Photometric uncertainty: σ = 0.1 mag (m ≤ 20), σ = 0.2 mag (m ≥ 21), linear interpolation in between
-- Injected transient distance range: 50–350 Mpc
+- Injected transient distance range: 50–600 Mpc
 
 ---
 
