@@ -1,2 +1,23 @@
-# Kilonova-Detection
-Simulation framework for kilonova detection in a synthetic local Universe (R ≤ 300 Mpc). Includes galaxy population modelling via a Schechter mass function, event injection of supernovae and kilonovae, survey cadence simulation, and detection efficiency analysis for LSST-like observations.
+# Kilonova Detection Simulation
+
+This project simulates the detection of kilonovae in a synthetic galaxy catalogue within 300 Mpc.
+
+## Objective
+To model realistic transient injection and evaluate detection under survey-style cadence constraints.
+
+## Methods
+- Schechter mass function for galaxy population
+- Host assignment weighted by stellar mass
+- Injection of kilonova and supernova light curves
+- Apparent magnitude conversion
+- Survey cadence simulation
+- Detection threshold modelling
+
+## Tools
+Python, NumPy, Pandas, Matplotlib
+
+## Example Result
+[Insert plot image here]
+
+## How to Run
+pip install -r requirements.txt
