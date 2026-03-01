@@ -16,8 +16,6 @@ To model realistic transient injection and evaluate detection under survey-style
 ## Tools
 Python, NumPy, Pandas, Matplotlib
 
-## Example Result
-[Insert plot image here]
 
 ## How to Run
 pip install -r requirements.txt
