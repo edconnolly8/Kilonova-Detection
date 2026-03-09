@@ -47,7 +47,7 @@ Notebook 2 requires two observational light curve files not included in the repo
 | File | Description |
 |------|-------------|
 | `~/Downloads/sn1993j_rband_shifted.csv` | SN 1993J (Type IIb supernova) r-band light curve |
-| `~/Documents/at2017gfo_rband.csv` | AT2017gfo (kilonova) r-band observations |
+| `~/Downloads/at2017gfo_rband.csv` | AT2017gfo (kilonova) r-band observations |
 
 Update the file paths in Notebook 2 if your data lives elsewhere.
 
@@ -94,6 +94,7 @@ Update the file paths in Notebook 2 if your data lives elsewhere.
 | Output | Source Notebook | Description |
 |--------|-----------------|-------------|
 | `galaxy_catalog.csv` | Notebook 1 | Synthetic galaxy population |
+| `survey_sensitivity.png` | Notebook 2 | Survey sensitivity grid (detection rate, FP, AUC vs m_lim and cadence) |
 | Various matplotlib plots | Both notebooks | Distributions, light curves, detection plots |
 
 ---
@@ -125,3 +126,7 @@ Kilonova-Detection/
 - There are no unit tests; validation is done visually through notebook plots and comparison with known observational data.
 - Fixed random seeds (`np.random.seed(42)`) ensure reproducible outputs across runs.
 - When modifying event rates or galaxy parameters, re-run Notebook 1 first before Notebook 2.
+- **Schechter sampling**: Both `sample_schechter_mass` and `sample_schechter_L` use rejection sampling in log-space with a Jacobian correction — the acceptance weight is `(M/M*)^(alpha+1) exp(-M/M*)` rather than the naive linear form, ensuring the correct `M^alpha exp(-M/M*)` distribution is recovered.
+- **Bootstrap CIs**: 100 resamples are used for fast interactive runs. Increase to ≥1,000 for publication-quality CIs.
+- **Survey sensitivity analysis**: `run_survey(t_obs_arr, m_lim_val)` is a self-contained parametric wrapper that accepts any cadence array and limiting magnitude. The grid sweeps m_lim ∈ [22, 25.5] and 2/3/4-epoch cadences, producing `sens_df` and `survey_sensitivity.png`.
+- **Threshold optimisation**: Youden's J and F₁ optimal thresholds are derived from the existing ROC arrays (`tpr_vals`, `fpr_vals`, `prec_vals`, `thresholds`) immediately after the PR curve cell.
