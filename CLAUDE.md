@@ -71,14 +71,21 @@ Update the file paths in Notebook 2 if your data lives elsewhere.
 |-----------|-------|
 | Supernova rate | 1×10^-6 per (M☉/yr) per year |
 | Kilonova rate | 1×10^-18 per M☉ per year |
-| Survey duration | 500,000 years |
+| Survey duration | 50,000 years |
 | Assumed absolute magnitude | M = −16 |
 
 ### Survey Cadence
 
-- Observation epochs: t = 0, 1, 2, 3 days
+- Observation epochs: t = 0, 1 days
 - Photometric uncertainty: σ = 0.1 mag (m ≤ 20), σ = 0.2 mag (m ≥ 21), linear interpolation in between
-- Injected transient distance range: 50–600 Mpc
+- Injected transient distance range: 50–300 Mpc
+- Limiting magnitude: m_lim = 24.5 (LSST r-band)
+
+### Multi-Seed Simulation
+
+- Number of realisations: 100 seeds
+- Injected per seed: 1 kilonova + 50 supernovae
+- KN fade-rate classification threshold: 0.35 mag/day
 
 ---
 
